@@ -51,11 +51,7 @@ void main() {
     char uy[] = "uy";
     char y[] = "y";
     char s[] = "s";
-    
-    char oneChar[20];
-    char twoChar[20];
-    char threeChar[20];
-    char returnWord[20];
+
     char temp[20];
 
     // User input
@@ -67,25 +63,6 @@ void main() {
     scanf("%s", word);
 
     int wordLength = strlen(word);
-
-
-
-    
-
-    // Set up end-of-word comparison strings
-    // strcpy(threeChar, word + (lastIndex - 2));
-    // strcpy(twoChar, word + (lastIndex - 1));
-    // strcpy(oneChar, word + (lastIndex));
-
-    // Testing to see variables are printed correctly
-    // printf("Last 3: %s\n", threeChar);
-    // printf("Last 2: %s\n", twoChar);
-    // printf("Last 1: %s\n", oneChar);
-
-
-
-    char * pch;
-
 
     // Level 1
     if (num == 1) {
