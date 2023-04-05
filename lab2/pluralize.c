@@ -45,6 +45,7 @@ void main() {
     char oneChar[20];
     char twoChar[20];
     char threeChar[20];
+    char returnWord[20];
 
     // User input
     int num;
@@ -78,7 +79,8 @@ void main() {
         printf("%d %s\n", num, word);
     }
     else if (strcmp(threeChar, ife) == 0) {
-        printf("Poggers.");
+        strncpy(returnWord, word, (lastIndex - 2)); //TODO: strncpy instead of strcpy!!!!!
+        printf("%d %s\n", num, returnWord);
     }
     // else if (strstr(word, "ife")) {
     //     int len = strlen(word);
