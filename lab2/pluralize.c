@@ -24,8 +24,8 @@ bool ends_with(const char* s, const char* t) {  // s = big word
         }
     }
     else if (compareLength == 2) {
-        strcpy(twoChar, s + (lastIndex - 1)); //Copy the last 3 chars of the input word
-        if (strcmp(threeChar, t) == 0) {  // Compare last 3 of word with given ending
+        strcpy(twoChar, s + (lastIndex - 1)); //Copy the last 2 chars of the input word
+        if (strcmp(twoChar, t) == 0) {  // Compare last 2 of word with given ending
             return true;    // They match!
         }
         else {
@@ -33,17 +33,30 @@ bool ends_with(const char* s, const char* t) {  // s = big word
         }
     }
     else if (compareLength == 1) {
-        return true;
+        return false;
     }
+    return false;
 }
 
 void main() {
 
+    // Manual list of -endings
     char ife[] = "ife";
+    char sh[] = "sh";
+    char ch[] = "ch";
+    char us[] = "us";
+    char ay[] = "ay";
+    char oy[] = "oy";
+    char ey[] = "ey";
+    char uy[] = "uy";
+    char y[] = "y";
+    char s[] = "s";
+    
     char oneChar[20];
     char twoChar[20];
     char threeChar[20];
     char returnWord[20];
+    char temp[20];
 
     // User input
     int num;
@@ -70,11 +83,9 @@ void main() {
     // printf("Last 1: %s\n", oneChar);
 
 
-    char s = 's';
 
     char * pch;
 
-    char temp[20];
 
     // Level 1
     if (num == 1) {
@@ -84,26 +95,44 @@ void main() {
         strncpy(temp, word, (wordLength - 3));  // Copy the word minus the ending to temp. "Strife" -> "Str"
         strcat(temp, "ives");   // Build the final word w/ ending, "Str" -> "Strives"
         printf("%d %s\n", num, temp);
+    }   
+    // 2 length endings here (could be condensed)
+    else if (ends_with(word, sh)) {
+        strncpy(temp, word, (wordLength - 2));
+        strcat(temp, "shes");
+        printf("%d %s\n", num, temp);
     }
-
-
-
-    // else if (strcmp(threeChar, ife) == 0) {
-    //     strncpy(returnWord, word, (lastIndex - 2)); //TODO: strncpy instead of strcpy!!!!!
-    //     printf("%d %s\n", num, returnWord);
-    // }
-
-
-
-    // else if (strstr(word, "ife")) {
-    //     int len = strlen(word);
-    //     pch = strstr(word, "ife");
-    //     if(pch != NULL) {
-    //         strncpy(pch, "ives", len + 1);
-    //     }
-    //     printf("%d %s\n", num, word);
-    else {
-        strncat(word, &s, 1);
+    else if (ends_with(word, ch)) {
+        strncpy(temp, word, (wordLength - 2));
+        strcat(temp, "ches");
+        printf("%d %s\n", num, temp);
+    }
+    else if (ends_with(word, us)) {
+        strncpy(temp, word, (wordLength - 2));
+        strcat(temp, "i");
+        printf("%d %s\n", num, temp);
+    }
+    else if (ends_with(word, ay)) {
+        strncpy(temp, word, (wordLength - 2));
+        strcat(temp, "ays");
+        printf("%d %s\n", num, temp);
+    }
+    else if (ends_with(word, oy)) {
+        strncpy(temp, word, (wordLength - 2));
+        strcat(temp, "oys");
+        printf("%d %s\n", num, temp);
+    }else if (ends_with(word, ey)) {
+        strncpy(temp, word, (wordLength - 2));
+        strcat(temp, "eys");
+        printf("%d %s\n", num, temp);
+    }
+    else if (ends_with(word, uy)) {
+        strncpy(temp, word, (wordLength - 2));
+        strcat(temp, "uys");
+        printf("%d %s\n", num, temp);
+    }
+    else {  //Add S to everything else
+        strncat(word, s, 1);
         printf("%d %s\n", num, word);
     }
 }
