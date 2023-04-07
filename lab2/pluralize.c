@@ -33,7 +33,13 @@ bool ends_with(const char* s, const char* t) {  // s = big word
         }
     }
     else if (compareLength == 1) {
-        return false;
+        strcpy(oneChar, s + (lastIndex ));
+        if (strcmp(oneChar, t) == 0) {
+            return true;    // They match!
+        }
+        else {
+            return false;   // No match!
+        }
     }
     return false;
 }
@@ -106,6 +112,12 @@ void main() {
     else if (ends_with(word, uy)) {
         strncpy(temp, word, (wordLength - 2));
         strcat(temp, "uys");
+        printf("%d %s\n", num, temp);
+    }
+    
+    else if (ends_with(word, y)) {
+        strncpy(temp, word, (wordLength - 1));
+        strcat(temp, "ies");
         printf("%d %s\n", num, temp);
     }
     else {  //Add S to everything else
