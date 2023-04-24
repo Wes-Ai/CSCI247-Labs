@@ -14,9 +14,10 @@ int main(int argc, char *argv[])
 
         a1 = a;  
 
-        a1 = 0;  //This set the memory value to 0.
+        //a1 = 0;  This sets the memory value to 0
+        // You no longer have access to change the value at that point.
 
-        a1[0] = 1; // cannot use an array call on a pointer?
+        a1[0] = 1;
 
         return 0;  
 
