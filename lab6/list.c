@@ -54,16 +54,9 @@ void print_list(struct node* list, int backwards) {
     }
 }
 
-void delete_head(struct node** list) {
-    if((*list) == NULL) return ;
-    struct node* curr = *list;
-    *list = (*list)->next;
-    curr->next = NULL;
-    free(curr);
-}
-
 void remove_node(struct node** list, int value) {
     struct node* curr = *list;
+    // If the value to be removed is at the start of the list, then delete that head.
     if ((*list)->previous == NULL && curr->value == value) {
         *list = (*list)->next;
         curr->next = NULL;
